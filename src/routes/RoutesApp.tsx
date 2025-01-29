@@ -1,10 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import App from '../App';
+import Home from '../pages/Home/Home';
 export default function RoutesApp() {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="*" element={<p>not found</p>} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 }

@@ -7,15 +7,29 @@ export default {
   ],
   theme: {
   	extend: {
-  		backgroundColor: {
-  			red: '#ff0000'
-  		},
+        screens: {
+            'xss' : '300px',
+        },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+        fontSize: {
+            'main-p' : '2rem',
+            'main-p2' : '1.5em',
+            'main-p3' : '1.2em',
+            'main-h1' : '4.2rem',
+            'main-h2' : '1.8rem',
+        },
+        backgroundImage: {
+            'hero-mobile': 'url("/assets/Backgrounds/bg-mobile.png")',
+        },
   		colors: {
+            test: '#676767',
+            Main: '#4F46E5' ,
+            MainDark: '#2316FF',
+            Bgray: '#E2E2E2',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
