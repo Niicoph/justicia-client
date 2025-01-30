@@ -7,9 +7,28 @@ export default {
   ],
   theme: {
   	extend: {
+        boxShadow : {
+            'card-sha' : "0px 0px 100px -34px #2316FF;",
+        },
+        blur : {
+            '5xl': '200px',
+        },
         screens: {
             'xss' : '300px',
         },
+        keyframes: {
+            mercury: {
+              '0%': { transform: 'translateY(0px) translateX(0px) scale(1)' },
+              '25%': { transform: 'translateY(-20px) translateX(10px) scale(1.05)' },
+              '50%': { transform: 'translateY(40px) translateX(-10px) scale(0.95)' },
+              '75%': { transform: 'translateY(-10px) translateX(50px) scale(1.02)' },
+              '100%': { transform: 'translateY(0px) translateX(0px) scale(1)' },
+            },
+          },
+          animation: {
+            mercury: 'mercury 5s infinite ease-in-out',
+          },
+
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -23,13 +42,20 @@ export default {
             'main-h2' : '1.8rem',
         },
         backgroundImage: {
-            'hero-mobile': 'url("/assets/Backgrounds/bg-mobile.png")',
+            'hero' : 'linear-gradient(360deg, #060A15 0% , #060A15 100%)',
+            'blur-gradient' :  'linear-gradient(360deg, #4F46E5 0% , #2316FF 100%)',
+            'blur-1' : 'linear-gradient(360deg, #2316FF 0% , #2316FF 100%)',
+            'blur-2' : 'linear-gradient(360deg, #36147A 0% , #421786 100%)',
+            'JGradient': 'linear-gradient(90deg, #4F46E5 0%, #2316FF 100%)',
         },
   		colors: {
-            test: '#676767',
+            cardT : '#0C0F19',
+            Background: "#060A15",
             Main: '#4F46E5' ,
             MainDark: '#2316FF',
+            cardBG: '#1F188C',
             Bgray: '#E2E2E2',
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

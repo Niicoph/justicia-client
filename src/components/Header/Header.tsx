@@ -3,7 +3,7 @@ import Logo from '../../assets/Logos/w-logo.png';
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 flex justify-between items-center w-full h-24 p-4 bg-black z-40">
+    <header className="fixed top-0 left-0 flex justify-between items-center w-full h-24 p-4 bg-Background z-40">
       <img src={Logo} alt="logo" className="h-10" />
       <div className="flex justify-center items-center gap-4">
         {/*  <Button className="h-10 w-fit">Empezar</Button> */}
