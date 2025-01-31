@@ -35,14 +35,18 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
         fontSize: {
-            'main-p' : '2rem',
-            'main-p2' : '1.5em',
-            'main-p3' : '1.2em',
-            'main-h1' : '4.2rem',
+            'hero-p1' : '1.4em',
+            'hero-p2' : '1.5em',
+            'hero-h1' : '4.2rem',
+            'sub-h2' : '1.4rem',
+            'sub-p' : '1em',
+
             'main-h2' : '1.8rem',
+            'main-h3' : '1.6rem',
         },
         backgroundImage: {
             'hero' : 'linear-gradient(360deg, #060A15 0% , #060A15 100%)',
+            'heroFooter' : 'linear-gradient(180deg, #060A15 0% , #1F188C 32% , #4F46E5 100%)',
             'blur-gradient' :  'linear-gradient(360deg, #4F46E5 0% , #2316FF 100%)',
             'blur-1' : 'linear-gradient(360deg, #2316FF 0% , #2316FF 100%)',
             'blur-2' : 'linear-gradient(360deg, #36147A 0% , #421786 100%)',
@@ -51,6 +55,7 @@ export default {
   		colors: {
             cardT : '#0C0F19',
             Background: "#060A15",
+            grayDark: '#0E0F12',
             Main: '#4F46E5' ,
             MainDark: '#2316FF',
             cardBG: '#1F188C',

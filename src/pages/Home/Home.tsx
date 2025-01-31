@@ -1,17 +1,19 @@
+import HeroApp from '../../assets/Hero/hero.png';
 import Wrapper from '../../components/wrapper/Wrapper';
 import Header from '../../components/Header/Header';
 import Badge from '../../components/Badge/Badge';
 import RoundedIcon from '../../components/Icon-round/RoundedIcon';
 import Feature from '../../components/Feature-card/Feature';
-import HeroApp from '../../assets/Hero/hero.png';
-import SplitText from '../../components/InitialHeading/SplitText';
+import FAQ from '../../components/FAQ/Faq';
+import FooterHero from '../../components/FooterHero/FooterHero';
+import BlurText from '../../components/InitialHeading/BlurText';
+
 import AnimatedContent from '../../components/Container/AnimatedContent';
 import { Button } from '@/components/ui/button';
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
-  const handleAnimationComplete = () => {
-    console.log('All letters have animated!');
-  };
+  const handleAnimationComplete = () => {};
 
   return (
     <Wrapper>
@@ -31,47 +33,35 @@ export default function Home() {
           <section className="relative bg-hero flex flex-col items-center h-fit border border-Bgray border-opacity-10 rounded-xl p-2 mt-20 overflow-hidden">
             <div className="flex flex-col gap-16 w-full h-fit justify-center items-center  dm-sans-bold text-white text-center pt-20 pb-20 z-20">
               <div className="flex flex-col justify-center items-center">
-                <SplitText
+                <BlurText
                   text="La solución"
-                  className="text-main-p2 "
-                  delay={100}
-                  animationFrom={{
-                    opacity: 0,
-                    transform: 'translate3d(0,50px,0)',
-                  }}
-                  animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                  easing="easeOutCubic"
-                  threshold={0.2}
-                  rootMargin="-50px"
-                  onLetterAnimationComplete={handleAnimationComplete}
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="text-hero-p1"
+                  animationFrom={undefined}
+                  animationTo={undefined}
                 />
-                <SplitText
-                  text="inteligente"
-                  className="text-main-h1 "
-                  delay={100}
-                  animationFrom={{
-                    opacity: 0,
-                    transform: 'translate3d(0,50px,0)',
-                  }}
-                  animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                  easing="easeOutCubic"
-                  threshold={0.2}
-                  rootMargin="-50px"
-                  onLetterAnimationComplete={handleAnimationComplete}
+                <BlurText
+                  text="Inteligente"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="text-hero-h1"
+                  animationFrom={undefined}
+                  animationTo={undefined}
                 />
-                <SplitText
-                  text="para tu despacho juridico"
-                  className="text-main-p2 "
-                  delay={100}
-                  animationFrom={{
-                    opacity: 0,
-                    transform: 'translate3d(0,50px,0)',
-                  }}
-                  animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                  easing="easeOutCubic"
-                  threshold={0.2}
-                  rootMargin="-50px"
-                  onLetterAnimationComplete={handleAnimationComplete}
+                <BlurText
+                  text="para tu despacho jurídico"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="text-hero-p2"
+                  animationFrom={undefined}
+                  animationTo={undefined}
                 />
               </div>
               <div className="flex gap-4">
@@ -90,9 +80,9 @@ export default function Home() {
         <section className="flex flex-col items-center w-full">
           <div className="flex flex-col gap-10 w-full text-white text-left">
             <div className="flex flex-col gap-5">
-              <h2 className="text-main-p2 inter-bold">¿Qué es Justic.IA?</h2>
-              <p className="text-main-p1 inter-light text-Bgray">
-                Justic.ia es una plataforma diseñada para estudios de abogados
+              <h2 className="text-main-h2 inter-bold">¿Qué es Justic.IA?</h2>
+              <p className="text-sub-p inter-light text-Bgray">
+                Justic.IA es una plataforma diseñada para estudios de abogados
                 que busca{' '}
                 <span className="dm-sans-bold bg-JGradient bg-clip-text text-transparent ">
                   optimizar
@@ -111,13 +101,13 @@ export default function Home() {
         {/* Features section */}
         <section className="relative flex flex-col text-left w-full gap-10">
           <div className="flex flex-col gap-5">
-            <h2 className="text-main-p2 dm-sans-bold text-white">
+            <h2 className="text-main-h2 dm-sans-bold text-white">
               Mejorá tu productividad
             </h2>
-            <p className="text-main-p1 inter-light text-Bgray">
+            <p className="text-sub-p inter-light text-Bgray">
               Optimiza la gestión de tu estudio jurídico con una plataforma
               impulsada por IA, diseñada para{' '}
-              <span className="dm-sans-bold bg-JGradient bg-clip-text text-transparent ">
+              <span className="dm-sans-bold bg-JGradient bg-clip-text text-transparent text-main-p1 ">
                 mejorar
               </span>{' '}
               la eficiencia y reducir la carga operativa.
@@ -196,7 +186,7 @@ export default function Home() {
         {/* Features description section */}
         <section className="flex flex-col w-full gap-10 text-left">
           <div className="flex flex-col gap-5 border-b border-opacity-10 border-Bgray pb-10">
-            <h2 className="text-main-p2 dm-sans-bold text-white">
+            <h2 className="text-main-h2 dm-sans-bold text-white">
               Como funciona?
             </h2>
             <div className="flex w-full h-fit gap-8">
@@ -205,7 +195,7 @@ export default function Home() {
               <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/task-completed.png" />
               <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/pdf--v1.png" />
             </div>
-            <p className="text-main-p1 inter-light text-Bgray">
+            <p className="text-sub-p inter-light text-Bgray">
               Analisis inteligente. Entrena a la IA subiendo tus documentos,
               realiza tus consultas y ahorra tiempo en la redacción de
               documentos legales.
@@ -218,6 +208,38 @@ export default function Home() {
               className="rounded-lg w-full h-full shadow-card-sha"
             />
           </div>
+        </section>
+        {/* FAQ section */}
+        <section className="flex flex-col w-full gap-10 text-left">
+          <div className="flex flex-col gap-5">
+            <h2 className="text-main-h2 dm-sans-bold text-white">FAQ</h2>
+          </div>
+          <div className="flex flex-col gap-5">
+            <FAQ
+              question="Para que es Justic.IA y como funciona?"
+              answer="Justic.IA es un sistema para estudios jurídicos que permite la automatización de tareas repetitivas y la gestión documentos"
+            />
+            <FAQ
+              question="Vale la pena contratarlo para mi estudio?"
+              answer="Si tu estudio esta buscando optimizar su gestión diaria y reducir la carga operativa, Justic.IA es la solución perfecta"
+            />
+            <FAQ
+              question="Mis documentos estaran correctamente protegidos?"
+              answer="Claro que si. Justic.IA utiliza codyAI. Este servicio utiliza AWS para proteger tus documentos y garantizar su seguridad"
+            />
+            <FAQ
+              question="Como puedo contratar el servicio?"
+              answer="Podes contratar el servicio contactando a nuestro equipo por email mediante el apartado de contacto o por telefono"
+            />
+          </div>
+        </section>
+        {/* Footer Hero */}
+        <section className="flex flex-col w-full gap-10">
+          <FooterHero />
+        </section>
+        {/* Footer */}
+        <section className="flex flex-col w-full gap-10">
+          <Footer />
         </section>
       </main>
     </Wrapper>
