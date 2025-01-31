@@ -35,14 +35,15 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
         fontSize: {
-            'hero-p1' : '1.4em',
+            'hero-p1' : '2em',
             'hero-p2' : '1.5em',
             'hero-h1' : '4.2rem',
             'sub-h2' : '1.4rem',
             'sub-p' : '1em',
-
             'main-h2' : '1.8rem',
-            'main-h3' : '1.6rem',
+            'hero-h1-lg' : '5rem',
+            'sub-h2-lg' : '3rem',
+            'sub-p-lg' : '1.2rem',
         },
         backgroundImage: {
             'hero' : 'linear-gradient(360deg, #060A15 0% , #060A15 100%)',

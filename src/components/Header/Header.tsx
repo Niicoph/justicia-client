@@ -1,12 +1,26 @@
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Logo from '../../assets/Logos/w-logo.png';
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 flex justify-between items-center w-full h-24 p-4 bg-Background z-40">
-      <img src={Logo} alt="logo" className="h-10" />
-      <div className="flex justify-center items-center gap-4">
-        {/*  <Button className="h-10 w-fit">Empezar</Button> */}
+    <header className="fixed top-0 left-0 flex justify-between items-center w-full h-24 p-4 bg-Background z-40 sm:p-8 lg:h-28 lg:gap-10">
+      <div className="w-fit h-fit lg:h-full lg:w-2/5">
+        <img src={Logo} alt="logo" className="h-full w-full" />
+      </div>
+      <div className="w-full h-full justify-evenly items-center inter-regular text-white text-opacity-50 hidden lg:flex">
+        <Link to="/login">Inicio</Link>
+        <Link to="/login">Casos de uso</Link>
+        <Link to="/login">Contacto</Link>
+      </div>
+      <div className="w-2/5 h-full  justify-between items-center hidden lg:flex">
+        <Link to="/login" className="inter-regular text-white text-opacity-50">
+          Login
+        </Link>
+        <Button className="text-black">Empezar</Button>
+      </div>
+      {/* mobile nav */}
+      <div className="flex justify-center items-center gap-4  lg:hidden">
         <svg
           className="h-6 w-6"
           xmlns="http://www.w3.org/2000/svg"
