@@ -4,9 +4,9 @@ import Logo from '../../assets/Logos/w-logo.png';
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 flex justify-between items-center w-full h-24 p-4 bg-Background z-40 sm:p-8 lg:h-28 lg:gap-10">
+    <header className="top-0 left-0 flex justify-between items-center w-full h-20 bg-Background z-40">
       <div className="w-fit h-fit lg:h-full lg:w-2/5">
-        <img src={Logo} alt="logo" className="h-full w-full" />
+        <img src={Logo} alt="logo" className="h-10 w-10" />
       </div>
       <div className="w-full h-full justify-evenly items-center inter-regular text-white text-opacity-50 hidden lg:flex">
         <Link to="/login">Inicio</Link>
