@@ -6,7 +6,7 @@ type BadgeProps = {
 
 export default function Badge({ description }: BadgeProps) {
   return (
-    <Button variant="outline">
+    <Button variant="outline" className="sm:text-[17px]">
       <img
         width="25"
         height="25"

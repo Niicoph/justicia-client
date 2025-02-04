@@ -1,20 +1,10 @@
-import HeroApp from '../../assets/Hero/hero.png';
-import Wrapper from '../../components/wrapper/Wrapper';
-import Header from '../../components/Header/Header';
-import Badge from '../../components/Badge/Badge';
-import RoundedIcon from '../../components/Icon-round/RoundedIcon';
-import Feature from '../../components/Feature-card/Feature';
-import FAQ from '../../components/FAQ/Faq';
-import FooterHero from '../../components/FooterHero/FooterHero';
-import BlurText from '../../components/InitialHeading/BlurText';
 
-import AnimatedContent from '../../components/Container/AnimatedContent';
-import { Button } from '@/components/ui/button';
-import Footer from '../../components/Footer/Footer';
-
-export default function Home() {
-  const handleAnimationComplete = () => {};
-
+Para pantallas entre 0  y 640 -> ‘default’
+Para pantallas  entre 640 y 768 -> “sm”
+Para pantallas entre 768 y 1024 -> “md”
+Para pantallas entre 1024 y 1280 -> “lg”
+Para pantallas entre 1280 y 1536 -> “xl”
+Para pantallas mayores a 1536 -> “2xl”
   return (
     <Wrapper>
       <Header />

@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
   	extend: {
+        padding: {
+            'hero-p' : 'padding-top: 5rem;',
+        },
         boxShadow : {
             'card-sha' : "0px 0px 100px -34px #2316FF;",
         },
@@ -15,7 +18,12 @@ export default {
         },
         screens: {
             'xss' : '300px',
+            'mdd' : '850px',
         },
+        padding: {
+            'hero-top': 'calc(100vh - 5rem)',
+          },
+
         keyframes: {
             mercury: {
               '0%': { transform: 'translateY(0px) translateX(0px) scale(1)' },
@@ -46,7 +54,11 @@ export default {
   		},
         fontSize: {
             'hero-h1' : '2.3em',
+            'hero-h1-sm': '3em',
+            'hero-h1-md' : '4em',
             'main-h2' : '1.8em',
+            'main-h2-sm' : '2.3em',
+            'main-h2-md' : '3em',
         },
         backgroundImage: {
             'hero' : 'linear-gradient(360deg, #060A15 0% , #060A15 100%)',

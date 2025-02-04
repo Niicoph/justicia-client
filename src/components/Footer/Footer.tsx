@@ -1,7 +1,7 @@
 import Logo from '../../assets/Logos/w-logo.png';
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center gap-5 w-full">
+    <footer className="flex flex-col justify-center gap-5 w-full px-4">
       <img src={Logo} alt="logo" width={50} height={50} />
       <div className="flex  w-full text-white pb-10 pt-10 border-t border-b border-Bgray border-opacity-10 justify-center items-center gap-5">
         <div className="h-fit w-2/4 text-sm flex flex-col gap-4 inter-light">
