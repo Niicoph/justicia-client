@@ -1,8 +1,31 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Logo from '../../assets/Logos/w-logo.png';
+import Nav from '../Nav/Nav';
 
 export default function Header() {
+  const [renderNav, setRenderNav] = useState(false);
+  const [animation, setAnimation] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleOpenNav = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    if (!renderNav) {
+      setRenderNav(true);
+      setAnimation('animate-open');
+    } else {
+      setAnimation('animate-close');
+      setTimeout(() => {
+        setRenderNav(false);
+      }, 700);
+    }
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 700);
+  };
+
   return (
     <header className="top-0 left-0 flex justify-between items-center w-full h-20 bg-Background z-40">
       <div className="w-fit h-fit lg:h-full lg:w-2/5">
@@ -13,40 +36,56 @@ export default function Header() {
         <Link to="/login">Casos de uso</Link>
         <Link to="/login">Contacto</Link>
       </div>
-      <div className="w-2/5 h-full  justify-between items-center hidden lg:flex">
+      <div className="w-2/5 h-full justify-between items-center hidden lg:flex">
         <Link to="/login" className="inter-regular text-white text-opacity-50">
           Login
         </Link>
         <Button className="text-black">Empezar</Button>
       </div>
-      {/* mobile nav */}
-      <div className="flex justify-center items-center gap-4  lg:hidden">
+
+      {/* Mobile Nav */}
+      <button
+        className="relative flex justify-center items-center gap-4 lg:hidden z-40"
+        onClick={handleOpenNav}
+      >
         <svg
-          className="h-6 w-6"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="50"
-          height="50"
-          viewBox="0,0,256,256"
         >
-          <g
-            fill="#ffffff"
-            fillRule="nonzero"
-            stroke="none"
-            strokeWidth="1"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeMiterlimit="10"
-            strokeDasharray=""
-            strokeDashoffset="0"
-          >
-            <g transform="scale(5.12,5.12)">
-              <path d="M5,8c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM5,23c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175zM5,38c-0.72127,-0.0102 -1.39216,0.36875 -1.75578,0.99175c-0.36361,0.623 -0.36361,1.39351 0,2.01651c0.36361,0.623 1.0345,1.00195 1.75578,0.99175h40c0.72127,0.0102 1.39216,-0.36875 1.75578,-0.99175c0.36361,-0.623 0.36361,-1.39351 0,-2.01651c-0.36361,-0.623 -1.0345,-1.00195 -1.75578,-0.99175z"></path>
-            </g>
-          </g>
+          <path
+            d="M20 7H5"
+            strokeWidth="2"
+            strokeLinecap="round"
+            stroke="white"
+            origin={`12.5px 7px`}
+            className={`transition-transform duration-300 ${renderNav ? 'translate-y-1 rotate-45' : 'translate-y-0 rotate-0'}`}
+            style={{
+              transformOrigin: '11px 7px',
+            }}
+          ></path>
+          <path
+            d="M20 12H5"
+            strokeWidth="2"
+            strokeLinecap="round"
+            stroke="white"
+            className={`transition-transform duration-300 ${renderNav ? 'scale-0' : 'scale-1'}`}
+          ></path>
+          <path
+            d="M20 17H5"
+            strokeWidth="2"
+            strokeLinecap="round"
+            stroke="white"
+            className={`transition-transform duration-300 ${renderNav ? '-translate-y-1 -rotate-45' : 'translate-y-0 rotate-0'}`}
+            style={{
+              transformOrigin: '11px 17px',
+            }}
+          ></path>
         </svg>
-      </div>
+      </button>
+      {renderNav && <Nav renderNav={renderNav} animation={animation} />}
     </header>
   );
 }

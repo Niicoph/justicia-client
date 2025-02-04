@@ -7,13 +7,22 @@ import Feature from '../../components/Feature-card/Feature';
 import FAQ from '../../components/FAQ/Faq';
 import FooterHero from '../../components/FooterHero/FooterHero';
 import BlurText from '../../components/InitialHeading/BlurText';
-
 import AnimatedContent from '../../components/Container/AnimatedContent';
 import { Button } from '@/components/ui/button';
 import Footer from '../../components/Footer/Footer';
 
+import { useState } from 'react';
+
 export default function Home() {
+  const [selected, setSelected] = useState<string>('AI');
   const handleAnimationComplete = () => {};
+  const messages: Record<string, string> = {
+    AI: 'Análisis inteligente. Entrena a la IA subiendo tus documentos, realiza tus consultas y ahorra tiempo en la redacción de documentos legales.',
+    Calendar:
+      'Organiza tu tiempo con facilidad. Accede a un calendario inteligente para planificar reuniones y eventos importantes.',
+    Task: 'Gestiona tus tareas de manera eficiente. Prioriza, asigna y realiza seguimiento de cada actividad sin esfuerzo.',
+    PDF: 'Convierte, edita y firma documentos PDF fácilmente. Simplifica el manejo de archivos digitales sin complicaciones.',
+  };
 
   return (
     <Wrapper>
@@ -173,15 +182,33 @@ export default function Home() {
                 Como funciona?
               </h2>
               <div className="flex w-full h-fit gap-8">
-                <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/artificial-intelligence.png" />
-                <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/calendar--v1.png" />
-                <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/task-completed.png" />
-                <RoundedIcon src="https://img.icons8.com/ios-filled/50/FFFFFF/pdf--v1.png" />
+                <RoundedIcon
+                  src="https://img.icons8.com/ios-filled/50/FFFFFF/artificial-intelligence.png"
+                  value="AI"
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <RoundedIcon
+                  src="https://img.icons8.com/ios-filled/50/FFFFFF/calendar--v1.png"
+                  value="Calendar"
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <RoundedIcon
+                  src="https://img.icons8.com/ios-filled/50/FFFFFF/task-completed.png"
+                  value="Task"
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <RoundedIcon
+                  src="https://img.icons8.com/ios-filled/50/FFFFFF/pdf--v1.png"
+                  value="PDF"
+                  selected={selected}
+                  setSelected={setSelected}
+                />
               </div>
               <p className="text-sm inter-light text-Bgray">
-                Analisis inteligente. Entrena a la IA subiendo tus documentos,
-                realiza tus consultas y ahorra tiempo en la redacción de
-                documentos legales.
+                {messages[selected]}
               </p>
             </div>
             <div className="flex flex-col h-fit w-full rounded-2xl text-white z-20 opacity-100 ">
@@ -200,7 +227,7 @@ export default function Home() {
             <div className="flex flex-col gap-5 w-full">
               <FAQ
                 question="Para que es Justic.IA y como funciona?"
-                answer="Justic.IA es un sistema para estudios jurídicos que permite la automatización de tareas repetitivas y la gestión documentos"
+                answer="Justic.IA es un sistema para estudios jurídicos que permite la automatización de tareas repetitivas y la gestión de documentos"
               />
               <FAQ
                 question="Vale la pena contratarlo para mi estudio?"

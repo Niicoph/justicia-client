@@ -24,11 +24,21 @@ export default {
               '75%': { transform: 'translateY(-10px) translateX(50px) scale(1.02)' },
               '100%': { transform: 'translateY(0px) translateX(0px) scale(1)' },
             },
+            open: {
+              '0%': { transform: 'translateY(-100vh)' , opacity: 0},
+              '60%': { transform: 'translateY(10px)' , opacity: 1},
+              '100%': { transform: 'translateY(0px)' , opacity: 1},
+            },
+            close: {
+                '0%': { transform: 'translateY(0)', opacity: 1 },
+                '100%': { transform: 'translateY(-100vh)', opacity: 0 },
+            }
           },
           animation: {
             mercury: 'mercury 5s infinite ease-in-out',
+            open: 'open 2s cubic-bezier(0.25, 1, 0.5, 1)',
+            close: 'close 0.7s linear',
           },
-
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
