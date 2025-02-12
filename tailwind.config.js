@@ -67,6 +67,7 @@ export default {
             'blur-1' : 'linear-gradient(360deg, #2316FF 0% , #2316FF 100%)',
             'blur-2' : 'linear-gradient(360deg, #36147A 0% , #421786 100%)',
             'JGradient': 'linear-gradient(90deg, #4F46E5 0%, #2316FF 100%)',
+            'JNoise' : 'url(src/assets/noise-light.png)',
         },
   		colors: {
             cardT : '#0C0F19',
@@ -76,6 +77,8 @@ export default {
             MainDark: '#2316FF',
             cardBG: '#1F188C',
             Bgray: '#E2E2E2',
+            Jmain: '#354EEF',
+            Jbackground: '#2e41d4',
 
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
