@@ -1,4 +1,5 @@
 import Logo from '../../assets/Logos/logo.png';
+import LogoBlue from '../../assets/Logos/logo-blue.png';
 import LoadingSpinner from '../../components/ui/loadingSpinner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,7 +27,7 @@ export default function Login() {
     <main className="min-h-screen w-full flex flex-col items-center justify-center">
       {/* noise */}
       <div className="absolute top-0 left-0 w-full h-full bg-JNoise z-10"></div>
-      <header className="absolute top-0 w-full flex flex-col justify-center items-center">
+      {/* <header className="absolute top-0 w-full flex flex-col justify-center items-center">
         <div className="w-full bg-Jbackground  flex flex-col justify-center items-center py-4">
           <img
             src={Logo}
@@ -49,14 +50,14 @@ export default function Login() {
             <path d="M0 0v74.7C62 44 122.4 28.7 205 46c83.8 17.6 160.5 25.4 240-7 54-22 110-21 173-5 76.5 19.4 146.5 23.3 222 0 55-17 110.3-31.9 160-22.2V0H0Z"></path>
           </g>
         </svg>
-      </header>
+      </header> */}
       <form
-        className={`flex flex-col gap-4 mt-20 z-50 border p-6 rounded-md ${login.isError ? 'bg-red-200 bg-opacity-10' : ''}`}
+        className={`flex flex-col gap-4 z-50 border px-5 py-10 rounded-md ${login.isError ? 'bg-red-200 bg-opacity-10' : ''}`}
         onSubmit={handleSubmit}
       >
-        <h1 className="nunito-extrabold text-3xl text-center text-Jmain  ">
-          Iniciar sesión
-        </h1>
+        <div className="flex justify-center items-center">
+          <img src={LogoBlue} alt="logo" height={70} width={70} />
+        </div>
         {/* Email field */}
         <div className="relative  max-w-xs w-screen">
           <Input

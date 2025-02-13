@@ -77,8 +77,18 @@ export default {
             MainDark: '#2316FF',
             cardBG: '#1F188C',
             Bgray: '#E2E2E2',
+
+
+
             Jmain: '#354EEF',
-            Jbackground: '#2e41d4',
+            Jsecon: '#2e41d4',
+            Jlow: '#DEECFF',
+            Jborder: '#E5E7EB',
+            Jbackground: '#F9FAFB',
+            Jinterface: '#22262B',
+
+            Jtitle: '#22262B',
+
 
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
