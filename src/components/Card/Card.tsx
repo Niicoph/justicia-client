@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 interface CardProps {
   title: string;
   subtitle: string;
@@ -5,6 +6,7 @@ interface CardProps {
   colorPrimary: string;
   colorImg: string;
   icon: string;
+  to: string;
 }
 
 export default function Card({
@@ -14,15 +16,19 @@ export default function Card({
   colorPrimary,
   colorImg,
   icon,
+  to,
 }: CardProps) {
   return (
-    <div className="h-36 w-full border border-Jborder shadow-sm rounded-lg bg-white flex flex-col p-4 gap-2">
+    <Link
+      className="h-36 w-full border border-Jborder shadow-sm rounded-lg bg-white flex flex-col justify-between p-4"
+      to={to}
+    >
       <div
         className={`${color} p-2 w-fit flex justify-center items-center rounded-md`}
       >
-        <img src={icon} alt={`icono - ${title}`} />
+        <img src={icon} alt={`icono - ${title}`} className="w-5 h-5" />
       </div>
-      <h2 className="text-lg font-semibold">{title}</h2>
+      <h2 className="text-md font-semibold text-gray-600">{title}</h2>
       <p className={`text-sm ${colorPrimary}`}>
         {subtitle}
         <img
@@ -31,6 +37,6 @@ export default function Card({
           className="w-4 h-4 inline-block ml-1"
         />
       </p>
-    </div>
+    </Link>
   );
 }

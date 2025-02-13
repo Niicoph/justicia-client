@@ -25,6 +25,14 @@ export default {
           },
 
         keyframes: {
+            fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+            },
+            fadeOut: {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0' },
+            },
             mercury: {
               '0%': { transform: 'translateY(0px) translateX(0px) scale(1)' },
               '25%': { transform: 'translateY(-20px) translateX(10px) scale(1.05)' },
@@ -46,6 +54,8 @@ export default {
             mercury: 'mercury 5s infinite ease-in-out',
             open: 'open 2s cubic-bezier(0.25, 1, 0.5, 1)',
             close: 'close 0.7s linear',
+            'fade-in': 'fadeIn 0.5s ease-in-out forwards',
+            'fade-out': 'fadeOut 0.5s ease-in-out forwards',
           },
   		borderRadius: {
   			lg: 'var(--radius)',

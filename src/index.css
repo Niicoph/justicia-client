@@ -168,3 +168,66 @@
     font-weight: 500;
     font-style: normal;
 }
+
+
+/* capital para los dias de la semana */
+.custom-calendar .rbc-header {
+    text-transform: capitalize;
+  }
+
+/* capital para el mes */
+.custom-calendar .rbc-toolbar-label {
+    text-transform: capitalize;
+  }
+
+
+
+
+
+/* Controla los botones de next y back */
+/* .custom-calendar .rbc-btn-group {
+    @apply flex justify-center;
+  } */
+
+  /* Ocultar el botón "Hoy" */
+  .rbc-btn-group button{
+    display: none;
+  }
+
+  /* Ocultar los botones de vista "Semßana", "Día", "Agenda" */
+  /* .custom-calendar .rbc-btn-group:last-child {
+    display: none;
+  } */
+
+  /* Cambiar color de fondo */
+.custom-calendar .rbc-month-view {
+    @apply bg-gray-100;
+  }
+
+  /* Cambiar color del encabezado */
+  .custom-calendar .rbc-header {
+    @apply bg-gray-200 text-gray-900 font-bold p-2;
+  }
+
+
+  /* Cambiar el fondo de los eventos */
+.custom-calendar .rbc-event {
+    @apply bg-green-500 text-white rounded-md p-2 shadow-lg;
+  }
+
+  /* Cambiar los headers de días */
+  .custom-calendar .rbc-header {
+    @apply bg-gray-200 text-gray-900 font-bold p-2;
+  }
+
+  /* Cambiar el fondo de los días del calendario */
+  .custom-calendar .rbc-month-view {
+    @apply bg-gray-50;
+  }
+
+
+
+  /* Ocultar botones "Hoy", "Semana", "Día", "Agenda" */
+/* .custom-calendar .rbc-toolbar button {
+    @apply bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition;
+  } */
