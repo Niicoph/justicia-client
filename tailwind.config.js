@@ -49,6 +49,9 @@ export default {
                 '0%': { transform: 'translateY(0)', opacity: 1 },
                 '100%': { transform: 'translateY(-100vh)', opacity: 0 },
             }
+
+
+
           },
           animation: {
             mercury: 'mercury 5s infinite ease-in-out',

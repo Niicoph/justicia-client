@@ -3,5 +3,5 @@ interface HeadingProps {
 }
 
 export default function Heading({ message }: HeadingProps) {
-  return <h1 className="text-3xl text-Jtitle nunito-bold ">{message}</h1>;
+  return <h1 className="text-md inter-regular text-gray-700 ">{message}</h1>;
 }
