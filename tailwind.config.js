@@ -19,6 +19,7 @@ export default {
         screens: {
             'xss' : '300px',
             'mdd' : '850px',
+            'lgCustom' : '1081px',
         },
         padding: {
             'hero-top': 'calc(100vh - 5rem)',

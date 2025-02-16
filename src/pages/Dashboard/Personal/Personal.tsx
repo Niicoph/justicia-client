@@ -1,10 +1,17 @@
 import Calendario from './Calendario';
 import Notas from './Notas';
-export default function Personal() {
+
+interface PersonalProps {
+  className?: string;
+}
+
+export default function Personal({ className }: PersonalProps) {
   return (
-    <section className="flex-1 flex flex-col">
+    <section
+      className={`flex-1 flex flex-col ${className} lgCustom:flex-auto lgCustom:block lgCustom:w-1/4 rounded-md border border-Jborder `}
+    >
       <Calendario />
-      <Notas />
+      {/* <Notas /> */}
     </section>
   );
 }

@@ -41,7 +41,7 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
   }, [tabActive]);
 
   return (
-    <header className="h-24 flex flex-col justify-between items-center pt-2 bg-white">
+    <header className="h-24 flex flex-col justify-between items-center pt-2  lgCustom:h-14 lgCustom:pb-2 border border-red-500">
       <div className="h-14 w-full flex justify-between items-center px-4">
         <div className="flex justify-center items-center w-fit h-full">
           <img src={Logo} alt="justicia-logo" width={40} height={40} />
@@ -63,7 +63,7 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
           </Avatar>
         </div>
       </div>
-      <nav className="h-14 flex items-center w-full border-b border-Jborder px-4">
+      <nav className="h-14 flex items-center w-full border-b border-Jborder px-4 lgCustom:hidden">
         {/* Contenedor de Tabs */}
         <div
           className="relative flex w-full h-full justify-between items-center "
