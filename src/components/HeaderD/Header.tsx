@@ -1,6 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Logo from '../../assets/Logos/logo-black.png';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 
 interface HeaderProps {
   tabActive: string;
@@ -57,10 +62,36 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
             alt="appointment-reminders"
             className="h-5 w-5"
           />
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <Popover>
+            <PopoverTrigger>
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </PopoverTrigger>
+            <PopoverContent className="mr-4 flex flex-col gap-2 p-0">
+              <div className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm ">
+                <img
+                  src="https://img.icons8.com/material-rounded/96/edit--v1.png"
+                  alt="edit"
+                  className="w-5 h-5"
+                />
+                <label>
+                  <p>Editar Perfil</p>
+                </label>
+              </div>
+              <div className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm">
+                <img
+                  src="https://img.icons8.com/material-rounded/96/exit.png"
+                  alt="logout"
+                  className="w-5 h-5"
+                />
+                <label>
+                  <p>Cerrar Sesión</p>
+                </label>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
       <nav className="h-10 flex items-center w-full border-b border-Jborder px-4 lgCustom:hidden">

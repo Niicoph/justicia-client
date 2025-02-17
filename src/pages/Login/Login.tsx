@@ -1,19 +1,30 @@
-import Logo from '../../assets/Logos/logo.png';
 import LogoBlue from '../../assets/Logos/logo-blue.png';
 import LoadingSpinner from '../../components/ui/loadingSpinner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useLogin } from '../../hooks/Auth/useLogin';
+import { AuthContext } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import PageLoading from '../../components/PageLoading/PageLoading';
 
 export default function Login() {
+  const { userAuth, isLoading } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const login = useLogin();
 
+  useEffect(() => {
+    if (userAuth) {
+      navigate('/dashboard'); // Redirige a Dashboard si ya está autenticado
+    }
+  }, [userAuth, navigate]);
+
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
+
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
@@ -23,43 +34,22 @@ export default function Login() {
     login.mutate({ email, password });
   };
 
+  // Si está cargando o ya hay un usuario autenticado, no renderizar el formulario
+  if (isLoading || userAuth) {
+    return <PageLoading />; // Puede usar un PageLoading o redirigir a otra página directamente.
+  }
+
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-center">
-      {/* noise */}
-      <div className="absolute top-0 left-0 w-full h-full bg-JNoise z-10"></div>
-      {/* <header className="absolute top-0 w-full flex flex-col justify-center items-center">
-        <div className="w-full bg-Jbackground  flex flex-col justify-center items-center py-4">
-          <img
-            src={Logo}
-            alt="Logo"
-            height={120}
-            width={120}
-            className="z-50"
-          />
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          className="w-full"
-        >
-          <g fill="#2e41d4">
-            <path
-              d="M0 0v99.7C62 69 122.4 48.7 205 66c83.8 17.6 160.5 20.4 240-12 54-22 110-26 173-10a392.2 392.2 0 0 0 222-5c55-17 110.3-36.9 160-27.2V0H0Z"
-              opacity=".5"
-            ></path>
-            <path d="M0 0v74.7C62 44 122.4 28.7 205 46c83.8 17.6 160.5 25.4 240-7 54-22 110-21 173-5 76.5 19.4 146.5 23.3 222 0 55-17 110.3-31.9 160-22.2V0H0Z"></path>
-          </g>
-        </svg>
-      </header> */}
       <form
-        className={`flex flex-col gap-4 z-50 border px-5 py-10 rounded-md ${login.isError ? 'bg-red-200 bg-opacity-10' : ''}`}
+        className={`flex flex-col gap-4 z-20 border px-5 py-10 rounded-md ${login.isError ? 'bg-red-200 bg-opacity-10' : ''}`}
         onSubmit={handleSubmit}
       >
         <div className="flex justify-center items-center">
           <img src={LogoBlue} alt="logo" height={70} width={70} />
         </div>
         {/* Email field */}
-        <div className="relative  max-w-xs w-screen">
+        <div className="relative max-w-xs w-screen">
           <Input
             type="email"
             placeholder="Correo electrónico"
