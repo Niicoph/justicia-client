@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 
 export default function Documentos() {
   return (
-    <div className="flex flex-col items-center h-3/4 py-6 px-4 gap-4 border-b border-Jborder">
+    <div className="flex flex-col items-center h-3/4 p-4 gap-4 border-b border-Jborder lgCustom:h-2/4">
       {/* Título y botón de agregar */}
       <div className="w-full flex justify-between h-6">
         <Heading message="Documentos" />

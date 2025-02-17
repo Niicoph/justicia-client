@@ -41,7 +41,7 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
   }, [tabActive]);
 
   return (
-    <header className="h-24 flex flex-col justify-between items-center pt-2  lgCustom:h-14 lgCustom:pb-2 border border-red-500">
+    <header className="h-24 flex flex-col justify-between items-center pt-2  lgCustom:h-14 lgCustom:pb-2">
       <div className="h-14 w-full flex justify-between items-center px-4">
         <div className="flex justify-center items-center w-fit h-full">
           <img src={Logo} alt="justicia-logo" width={40} height={40} />

@@ -8,10 +8,10 @@ interface GestorProps {
 export default function Gestor({ className }: GestorProps) {
   return (
     <section
-      className={`flex-1 flex flex-col ${className} lgCustom:flex-auto lgCustom:block lgCustom:w-1/4`}
+      className={`flex-1 flex flex-col ${className} lgCustom:flex-auto lgCustom:block lgCustom:w-1/4 rounded-md border border-Jborder bg-white`}
     >
       <Documentos />
-      {/* <Editor /> */}
+      <Editor />
     </section>
   );
 }

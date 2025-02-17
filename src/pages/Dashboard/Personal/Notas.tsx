@@ -3,7 +3,7 @@ import Note from '../../../components/Note/Note';
 
 export default function Notas() {
   return (
-    <div className="flex flex-col items-center h-full  p-4 gap-4">
+    <div className="flex flex-col items-center h-full p-4 gap-4 lgCustom:h-full lgCustom:bg-white lgCustom:rounded-md">
       <div className="w-full flex justify-between h-6">
         <Heading message="Notas"></Heading>
         <img

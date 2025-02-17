@@ -30,7 +30,7 @@ export default function Tiptap() {
   if (!editor) return null;
 
   return (
-    <div className="border border-Jborder rounded-md p-4">
+    <div className="border border-Jborder rounded-md p-4 h-full">
       {/* Botones de formato */}
       <div className="flex gap-2 mb-2 flex-wrap">
         <button
@@ -149,7 +149,7 @@ export default function Tiptap() {
       {/* Área de edición */}
       <EditorContent
         editor={editor}
-        className="border border-Jborder p-2 h-96 overflow-y-scroll leading-loose"
+        className="border border-Jborder p-2 h-96 overflow-y-scroll leading-loose lgCustom:h-auto"
       />
     </div>
   );

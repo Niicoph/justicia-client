@@ -5,8 +5,8 @@ import Heading from '../../../components/Heading/Heading';
 export default function Calendario() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
-    <div className="flex flex-col items-center h-3/4  py-6 px-4 gap-4 border-b border-Jborder lgCustom:h-full">
-      <div className="w-full flex justify-between h-6 border border-blue-500">
+    <div className="flex flex-col items-center h-3/4 p-4 gap-4 border-b border-Jborder lgCustom:h-full lgCustom:bg-white lgCustom:rounded-md">
+      <div className="w-full flex justify-between h-6">
         <Heading message="Calendario"></Heading>
         <img
           src="https://img.icons8.com/material-rounded/96/plus-math--v1.png"
