@@ -8,9 +8,10 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import { useNote } from '../../hooks/Notas/useNote';
-import LoadingSpinner from '../ui/loadingSpinner'; // Asumiendo que tienes un spinner de carga
+import { useNote } from '../../hooks/Notas/useCreateNote';
+import LoadingSpinner from '../ui/loadingSpinner';
 import { useState } from 'react';
+import AddButton from '../AddButton/AddButton';
 
 export default function NoteDialog() {
   const note = useNote();
@@ -21,11 +22,11 @@ export default function NoteDialog() {
 
   const handleNoteSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const notePayload = {
-      titulo: noteData.titulo,
-      descripcion: noteData.descripcion,
-    };
-    note.mutate(notePayload);
+    // const notePayload = {
+    //   titulo: noteData.titulo,
+    //   descripcion: noteData.descripcion,
+    // };
+    note.mutate();
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,34 +37,28 @@ export default function NoteDialog() {
   return (
     <Dialog>
       <DialogTrigger>
-        <img
-          src="https://img.icons8.com/material-rounded/96/plus-math--v1.png"
-          alt="add"
-          className="w-6 h-6"
-        />
+        <AddButton action="Agregar nota" />
       </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
+      <DialogContent className="p-6">
+        <DialogHeader className="flex flex-col gap-4">
           <DialogTitle>Agregar Nota</DialogTitle>
           <DialogDescription>
             <form onSubmit={handleNoteSubmit} className="flex flex-col gap-4">
               <Input
                 type="text"
-                name="titulo" // Changed to match state key
+                name="titulo"
                 value={noteData.titulo}
                 onChange={handleInputChange}
                 placeholder="Nota"
                 className="w-full"
-                required
               />
               <Input
                 type="text"
-                name="descripcion" // Changed to match state key
+                name="descripcion"
                 value={noteData.descripcion}
                 onChange={handleInputChange}
                 placeholder="Descripción"
                 className="w-full"
-                required
               />
               {/* Error message */}
               {note.isError && (
@@ -74,7 +69,7 @@ export default function NoteDialog() {
               {/* Submit button with loading */}
               <Button
                 type="submit"
-                className={`w-full p-2 bg-black text-white rounded-md mt-6 ${note.isLoading ? 'opacity-50' : ''}`}
+                className={`w-full p-2 bg-black text-white rounded-md  ${note.isLoading ? 'opacity-50' : ''}`}
                 disabled={note.isLoading}
               >
                 {note.isLoading ? <LoadingSpinner /> : 'Agregar Nota'}

@@ -8,22 +8,14 @@ import {
 } from '@/components/ui/table';
 import Document from '../../../components/Document/Document';
 import { Input } from '@/components/ui/input';
+import AddButton from '../../../components/AddButton/AddButton';
 
 export default function Documentos() {
   return (
-    <div className="flex flex-col items-center h-3/4 p-4 gap-4 border border-Jborder rounded-md lgCustom:h-full lgCustom:bg-white lgCustom:rounded-md">
-      {/* Título y botón de agregar */}
-      <div className="w-full flex justify-between h-6">
-        <Heading message="Documentos" />
-        <img
-          src="https://img.icons8.com/material-rounded/96/plus-math--v1.png"
-          alt="add"
-          className="w-6 h-6"
-        />
-      </div>
-
+    <div className="flex flex-col  h-full p-4 gap-4  lgCustom:bg-white border-b border-Jborder overflow-y-scroll">
+      <AddButton action="Agregar Documento" />
       {/* Contenedor principal con altura limitada */}
-      <div className="rounded-md w-full h-80 flex flex-col gap-2">
+      <div className="rounded-md w-full flex-grow h-10 flex flex-col gap-2 overflow-y-scroll">
         {/* Barra de búsqueda */}
         <form action="get" className="h-10 w-full">
           <Input
@@ -32,10 +24,7 @@ export default function Documentos() {
             className="h-full w-full text-sm bg-transparent border border-Jborder rounded-md px-2"
           />
         </form>
-
-        {/* Contenedor de la tabla con scroll interno */}
-        <div className="flex flex-col h-64">
-          {/* Header fijo con efecto sticky */}
+        <div className="flex flex-grow flex-col  overflow-y-scroll">
           <div className="sticky top-0 z-10">
             <Table className="w-full">
               <TableHeader>
@@ -47,11 +36,11 @@ export default function Documentos() {
               </TableHeader>
             </Table>
           </div>
-          {/* Contenedor scrollable */}
-          <div className="flex-1 overflow-y-auto">
-            <Table className="w-full">
+
+          <div className="flex h-fit overflow-y-auto">
+            <Table>
               <TableBody>
-                {[...Array(10)].map((_, index) => (
+                {[...Array(100)].map((_, index) => (
                   <TableRow key={index}>
                     <Document name="Código Penal " status="Aprendido" />
                   </TableRow>

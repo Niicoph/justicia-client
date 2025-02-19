@@ -1,17 +1,10 @@
 import Tiptap from '../../../components/Tiptap/Tiptap';
-import Heading from '../../../components/Heading/Heading';
+import AddButton from '../../../components/AddButton/AddButton';
 export default function Editor() {
   return (
-    <div className="flex flex-col items-center h-3/4 p-4 gap-4 border border-Jborder rounded-md lgCustom:h-full lgCustom:bg-white lgCustom:rounded-md">
-      <div className="w-full flex justify-between h-6">
-        <Heading message="Editor word"></Heading>
-        <img
-          src="https://img.icons8.com/material-rounded/96/plus-math--v1.png"
-          alt="add"
-          className="w-6 h-6"
-        />
-      </div>
-      <div className="max-w-1 min-w-full h-full flex flex-col">
+    <div className="flex flex-col  h-full p-4 gap-4  lgCustom:bg-white rounded-md overflow-y-scroll">
+      <AddButton action="Agregar Documento" />
+      <div className="rounded-md w-full flex-grow h-10 flex flex-col gap-2 overflow-y-scroll">
         <Tiptap />
       </div>
     </div>

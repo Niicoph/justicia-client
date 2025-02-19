@@ -1,4 +1,4 @@
-import Heading from '../../../components/Heading/Heading';
+import ContainerHeader from '../../../components/ContainerHeader/ContainerHeader';
 interface ChatProps {
   className?: string;
 }
@@ -8,11 +8,7 @@ export default function Chat({ className }: ChatProps) {
     <section
       className={`flex-1 flex flex-col ${className} lgCustom:flex-auto lgCustom:block lgCustom:w-2/4 rounded-md border border-Jborder bg-white`}
     >
-      <div className="flex flex-col items-center h-full p-4 ">
-        <div className="w-full flex justify-between h-6">
-          <Heading message="Chat"></Heading>
-        </div>
-      </div>
+      <ContainerHeader message="Chat" />
       {/* Cody */}
     </section>
   );

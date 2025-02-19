@@ -24,15 +24,15 @@ export default function Tiptap() {
       Heading.configure({ levels: [1, 2] }),
       TextAlign.configure({ types: ['heading', 'paragraph'] }),
     ],
-    content: '<p>Escribe aquí...</p>',
+    content: '<p">Escribe aquí...</p>',
   });
 
   if (!editor) return null;
 
   return (
-    <div className="border border-Jborder rounded-md p-4 h-full">
+    <div className="border border-Jborder rounded-md p-4 h-full overflow-y-scroll">
       {/* Botones de formato */}
-      <div className="flex gap-2 mb-2 flex-wrap">
+      <div className="flex gap-2 mb-2 flex-wrap h-fit">
         <button
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={`px-2 py-1 border rounded ${
@@ -145,11 +145,9 @@ export default function Tiptap() {
           ⬛
         </button>
       </div>
-
-      {/* Área de edición */}
       <EditorContent
         editor={editor}
-        className="border border-Jborder p-2 h-96 overflow-y-scroll leading-loose lgCustom:h-auto"
+        className="w-full border border-Jborder  p-2 leading-loose h-full lgCustom:h-auto overflow-y-scroll"
       />
     </div>
   );

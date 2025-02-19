@@ -1,25 +1,22 @@
 import { Calendar } from '@/components/ui/calendar';
 import { useState } from 'react';
-import Heading from '../../../components/Heading/Heading';
+import AddButton from '../../../components/AddButton/AddButton';
 
 export default function Calendario() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
-    <div className="flex flex-col items-center h-3/4 p-4 gap-4 border aborder-Jborder rounded-md lgCustom:h-full lgCustom:bg-white lgCustom:rounded-md">
-      <div className="w-full flex justify-between h-6">
-        <Heading message="Calendario"></Heading>
-        <img
-          src="https://img.icons8.com/material-rounded/96/plus-math--v1.png"
-          alt="add"
-          className="w-6 h-6"
-        />
-      </div>
+    <div className="flex flex-col  h-full p-4 gap-4  lgCustom:bg-white border-b border-Jborder">
+      <AddButton action="Agregar evento" />
       <Calendar
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="rounded-md border border-Jborder w-full flex justify-center items-center h-80"
+        className="rounded-md border border-Jborder w-full flex justify-center items-center h-full"
       />
+      <div className="flex justify-between items-center gap-4 h-full">
+        <div className="w-full h-full rounded-md border border-Jborder"></div>
+        <div className="w-full h-full rounded-md border border-Jborder"></div>
+      </div>
     </div>
   );
 }
