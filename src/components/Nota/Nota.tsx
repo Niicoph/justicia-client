@@ -39,7 +39,7 @@ export default function Nota({
   };
 
   return (
-    <div className="relative w-full h-18 rounded-md flex border hover:border hover:border-black z-10 cursor-pointer">
+    <div className="relative w-full h-18 rounded-md flex border hover:border hover:border-slate-300 z-10 cursor-pointer">
       <div
         className="w-full h-full p-4 gap-2 flex items-center"
         onClick={() => {

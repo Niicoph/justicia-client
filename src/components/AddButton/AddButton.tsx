@@ -12,7 +12,7 @@ export default function AddButton({ action, newNoteLoading }: AddButtonProps) {
       type="submit"
       disabled={newNoteLoading}
       id="calendar-input"
-      className="flex justify-center items-center rounded-md border border-Jborder w-full h-10 shadow-none text-gray-400"
+      className="flex justify-center items-center rounded-md border border-Jborder w-full h-10 shadow-none text-gray-500 hover:bg-slate-100"
       name="calendar-button"
     >
       <svg

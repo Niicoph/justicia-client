@@ -96,11 +96,11 @@ export default {
 
             Jmain: '#354EEF',
             Jsecon: '#2e41d4',
+            Jter: '#EEF2FF',
             Jlow: '#DEECFF',
-            Jborder: '#E5E7EB',
+            Jborder: '#DCDCDF',
             Jbackground: '#F9FAFB',
             Jinterface: '#22262B',
-
             Jtitle: '#22262B',
 
 
