@@ -17,7 +17,7 @@ type DeleteButtonProps = {
 
 export default function DeleteButton({ id, handleDelete }: DeleteButtonProps) {
   return (
-    <div className="flex z-30">
+    <div className="flex">
       <AlertDialog>
         <AlertDialogTrigger>
           <svg

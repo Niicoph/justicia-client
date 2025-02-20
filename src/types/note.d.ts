@@ -1,6 +1,6 @@
 export interface Note {
     id: number;
     titulo: string;
-    descripcion: string;
-    usuario_id: number;
+    descripcion: string | null;
+    usuario_id?: number;
   }

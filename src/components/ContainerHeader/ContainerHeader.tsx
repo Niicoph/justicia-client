@@ -1,7 +1,7 @@
 import { LeftBarContext } from '../../contexts/LeftBarContext';
 import { RightBarContext } from '../../contexts/RightBarContext';
 import Heading from '../Heading/Heading';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 type ContainerHeaderProps = {
   message: string;

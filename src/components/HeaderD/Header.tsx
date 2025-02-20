@@ -6,6 +6,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { useLogout } from '../../hooks/Auth/useLogout';
+import PageLoading from '../PageLoading/PageLoading';
 
 interface HeaderProps {
   tabActive: string;
@@ -13,6 +15,7 @@ interface HeaderProps {
 }
 
 export default function Header({ tabActive, setTabActive }: HeaderProps) {
+  const { mutate: logout, isLoading: logoutLoading } = useLogout();
   const tabContainerRef = useRef<HTMLDivElement | null>(null);
   const tabsRef = useRef<{ [key: string]: HTMLParagraphElement | null }>({});
 
@@ -41,9 +44,11 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
     window.addEventListener('resize', updateIndicator); // Escuchar cambios en el tamaño
 
     return () => {
-      window.removeEventListener('resize', updateIndicator); // Limpiar evento
+      window.removeEventListener('resize', updateIndicator);
     };
   }, [tabActive]);
+
+  if (logoutLoading) return <PageLoading />;
 
   return (
     <header className="h-fit flex flex-col justify-between items-center pt-4 lgCustom:h-14">
@@ -72,7 +77,7 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
             <PopoverContent className="mr-4 flex flex-col gap-2 p-0">
               <div className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm ">
                 <img
-                  src="https://img.icons8.com/material-rounded/96/edit--v1.png"
+                  src="https://img.icons8.com/fluency-systems-filled/50/edit-user.png"
                   alt="edit"
                   className="w-5 h-5"
                 />
@@ -80,13 +85,16 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
                   <p>Editar Perfil</p>
                 </label>
               </div>
-              <div className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm">
+              <div
+                className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm cursor-pointer"
+                onClick={() => logout()}
+              >
                 <img
                   src="https://img.icons8.com/material-rounded/96/exit.png"
                   alt="logout"
                   className="w-5 h-5"
                 />
-                <label>
+                <label className="cursor-pointer">
                   <p>Cerrar Sesión</p>
                 </label>
               </div>

@@ -4,6 +4,9 @@ import { Note } from '../../types/note';
 
 interface ErrorResponse {
   message: string;
+  response?: {
+    status: number;
+  };
 }
 
 export const useDeleteNote = () => {
@@ -34,6 +37,14 @@ export const useDeleteNote = () => {
     onSettled: (_data, error, _variables, context) => {
       if (error && context?.previousNotes) {
         queryClient.setQueryData('notes', context.previousNotes);
+      }
+    },
+    // in case the token has expired, redirect to login
+    onError: (error) => {
+      if (error.response) {
+        if (error.response.status === 401) {
+          window.location.href = '/login';
+        }
       }
     },
   });
