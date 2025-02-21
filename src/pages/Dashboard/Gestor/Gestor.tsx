@@ -11,7 +11,7 @@ export default function Gestor({ className }: GestorProps) {
   const { rightBarOpen } = useContext(RightBarContext);
   return (
     <section
-      className={`flex flex-col ${className} lgCustom:flex-auto lgCustom:flex  rounded-md border border-Jborder bg-white ${rightBarOpen === false ? 'lgCustom:w-fit lgCustom:flex-initial' : 'lgCustom:w-1/4'}`}
+      className={`flex flex-col ${className} lgCustom:flex-auto lgCustom:flex  rounded-xl  bg-white ${rightBarOpen === false ? 'lgCustom:w-fit lgCustom:flex-initial' : 'lgCustom:w-2/6'}`}
     >
       <ContainerHeader message="Gestor" />
       {rightBarOpen === true && (

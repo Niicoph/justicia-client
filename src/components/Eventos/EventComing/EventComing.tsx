@@ -40,7 +40,7 @@ export default function EventComing({ evento }: EventoComingProps) {
 
   return (
     <div
-      className={`flex h-full w-full text-[#181f4e] border-l-4 border-Jmain rounded-lg  p-4 gap-2 hover:cursor-pointer hover:shadow-lg ${eventoDate.getTime() !== currentDate.getTime() ? 'text-[#B3B3B3] border-[#B3B3B3] bg-[#F2F2F2]' : 'bg-[#c3dbff]'}`}
+      className={`flex h-full w-full text-[#171954] border-l-4 border-[#2160e1] rounded-2xl  p-4 gap-2 hover:cursor-pointer hover:shadow-lg ${eventoDate.getTime() !== currentDate.getTime() ? 'text-Jdisabled border-Jdisabled bg-[#F2F2F2]' : 'bg-[#bfdffe]'}`}
     >
       <div
         className={`w-1/4 flex flex-col items-center justify-center inter-lightbold text-xl`}
@@ -50,11 +50,11 @@ export default function EventComing({ evento }: EventoComingProps) {
       </div>
       <div className="w-full flex flex-col items-start justify-center inter-semibold text-[12px]">
         <p
-          className={` ${eventoDate.getTime() !== currentDate.getTime() ? 'text-[#B3B3B3]' : ''}`}
+          className={` ${eventoDate.getTime() !== currentDate.getTime() ? 'text-Jdisabled' : ''}`}
         >
           {evento.title}
         </p>
-        <p>
+        <p className="text-[#1e418a]">
           {formatHour(evento.hora_inicio)} - {formatHour(evento.hora_fin)}
         </p>
       </div>

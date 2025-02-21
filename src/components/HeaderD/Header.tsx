@@ -1,13 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Logo from '../../assets/Logos/logo-black.png';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { useLogout } from '../../hooks/Auth/useLogout';
 import PageLoading from '../PageLoading/PageLoading';
+import ProfilePopover from './Profile/ProfilePopover';
+import NotifyPopover from './Notify/NotifyPopover';
+import HelpPopover from './Help/HelpPopover';
+import { useLogout } from '../../hooks/Auth/useLogout';
 
 interface HeaderProps {
   tabActive: string;
@@ -53,53 +50,13 @@ export default function Header({ tabActive, setTabActive }: HeaderProps) {
   return (
     <header className="h-fit flex flex-col justify-between items-center pt-4 lgCustom:h-14">
       <div className="h-10 w-full flex justify-between items-center px-4">
-        <div className="flex justify-center items-center w-fit h-full">
+        <div className="flex justify-center items-center w-14 h-full">
           <img src={Logo} alt="justicia-logo" width={40} height={40} />
         </div>
-        <div className="w-fit h-full flex justify-between items-center gap-4">
-          <img
-            src="https://img.icons8.com/forma-light/30/help.png"
-            alt="help"
-            className="h-5 w-5"
-          />
-          <img
-            src="https://img.icons8.com/forma-light/30/appointment-reminders.png"
-            alt="appointment-reminders"
-            className="h-5 w-5"
-          />
-          <Popover>
-            <PopoverTrigger>
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </PopoverTrigger>
-            <PopoverContent className="mr-4 flex flex-col gap-2 p-0">
-              <div className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm ">
-                <img
-                  src="https://img.icons8.com/fluency-systems-filled/50/edit-user.png"
-                  alt="edit"
-                  className="w-5 h-5"
-                />
-                <label>
-                  <p>Editar Perfil</p>
-                </label>
-              </div>
-              <div
-                className="flex justify-start items-center gap-2 border-b border-Jborder p-2 text-sm cursor-pointer"
-                onClick={() => logout()}
-              >
-                <img
-                  src="https://img.icons8.com/material-rounded/96/exit.png"
-                  alt="logout"
-                  className="w-5 h-5"
-                />
-                <label className="cursor-pointer">
-                  <p>Cerrar Sesión</p>
-                </label>
-              </div>
-            </PopoverContent>
-          </Popover>
+        <div className="h-full w-fit flex justify-center items-center  gap-4">
+          <HelpPopover />
+          <NotifyPopover />
+          <ProfilePopover logout={logout} />
         </div>
       </div>
       <nav className="h-10 flex items-center w-full border-b border-Jborder px-4 lgCustom:hidden">

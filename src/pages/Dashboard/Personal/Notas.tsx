@@ -27,7 +27,7 @@ export default function Notas() {
   }
   return (
     <div
-      className={`flex flex-col h-2/3 p-4 gap-4 lgCustom:bg-white overflow-y-scroll rounded-md`}
+      className={`flex flex-col h-2/3 p-4 gap-4 lgCustom:bg-white overflow-y-scroll rounded-xl`}
     >
       {showEditMenu && selectedNote ? (
         <UpdateNote

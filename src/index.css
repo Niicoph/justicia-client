@@ -247,3 +247,12 @@ div {
 /* .custom-calendar .rbc-toolbar button {
     @apply bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition;
   } */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

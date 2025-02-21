@@ -12,6 +12,7 @@ export default {
         },
         boxShadow : {
             'card-sha' : "0px 0px 100px -34px #2316FF;",
+            'pop-sha': 'rgba(0, 0, 0, 0.24) 0px 3px 8px;'
         },
         blur : {
             '5xl': '200px',
@@ -102,6 +103,7 @@ export default {
             Jbackground: '#F9FAFB',
             Jinterface: '#22262B',
             Jtitle: '#22262B',
+            Jdisabled: '#B3B3B3',
 
 
   			background: 'hsl(var(--background))',

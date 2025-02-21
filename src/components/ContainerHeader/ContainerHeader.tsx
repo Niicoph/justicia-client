@@ -23,7 +23,7 @@ export default function ContainerHeader({ message }: ContainerHeaderProps) {
     <>
       {message === 'Gestor' ? (
         <div
-          className={`flex justify-between border-b border-Jborder p-4 ${rightBarOpen === false ? 'w-fit' : 'w-full'}`}
+          className={`flex justify-between border-b border-slate-300 p-4 ${rightBarOpen === false ? 'w-14' : 'w-full'}`}
         >
           {rightBarOpen === true && <Heading message={message} />}
           <svg
@@ -58,7 +58,7 @@ export default function ContainerHeader({ message }: ContainerHeaderProps) {
         </div>
       ) : message === 'Personal' ? (
         <div
-          className={`flex justify-between border-b border-Jborder p-4 ${leftBarOpen === false ? 'w-fit' : 'w-full'}`}
+          className={`flex justify-between border-b border-slate-300 p-4 ${leftBarOpen === false ? 'w-14' : 'w-full'}`}
         >
           {leftBarOpen === true && <Heading message={message} />}
           <svg
@@ -92,7 +92,7 @@ export default function ContainerHeader({ message }: ContainerHeaderProps) {
           </svg>
         </div>
       ) : message === 'Chat' ? (
-        <div className="w-full flex justify-between border-b border-Jborder p-4">
+        <div className="w-full flex justify-between border-b border-slate-300 p-4">
           <Heading message={message} />
         </div>
       ) : null}

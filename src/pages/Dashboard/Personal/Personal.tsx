@@ -13,7 +13,7 @@ export default function Personal({ className }: PersonalProps) {
 
   return (
     <section
-      className={`flex flex-col ${className} lgCustom:flex-auto lgCustom:flex  rounded-md border border-Jborder bg-white ${leftBarOpen === false ? 'lgCustom:w-fit lgCustom:flex-initial' : 'lgCustom:w-1/4'}`}
+      className={`flex flex-col ${className} lgCustom:flex-auto lgCustom:flex  rounded-xl bg-white ${leftBarOpen === false ? 'lgCustom:w-fit lgCustom:flex-initial' : 'lgCustom:w-2/6'}`}
     >
       <ContainerHeader message="Personal" />
       {leftBarOpen === true && (

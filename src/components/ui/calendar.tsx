@@ -47,8 +47,9 @@ function Calendar({
         ),
         day_range_start: 'day-range-start',
         day_range_end: 'day-range-end',
-        day_selected: 'bg-slate-100 text-black border border-slate-200',
-        day_today: 'bg-[#c3dbff] border border-[#9fc2ff] text-[#79a0ff]',
+        day_selected:
+          'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
+        day_today: 'bg-accent text-accent-foreground',
         day_outside:
           'day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground',
         day_disabled: 'text-muted-foreground opacity-50',
@@ -56,9 +57,6 @@ function Calendar({
           'aria-selected:bg-accent aria-selected:text-accent-foreground',
         day_hidden: 'invisible',
         ...classNames,
-      }}
-      modifiersClassNames={{
-        eventDay: 'border border-[#9fc2ff] text-[#79a0ff]',
       }}
       components={{
         IconLeft: ({ className, ...props }) => (

@@ -8,7 +8,7 @@ export default function Dashboard() {
   const [tabActive, setTabActive] = useState('chat');
 
   return (
-    <div className="min-h-screen max-h-screen flex flex-col overflow-y-scroll  bg-white animate-fade-in  lgCustom:bg-slate-100">
+    <div className="min-h-screen max-h-screen flex flex-col overflow-y-scroll  bg-white animate-fade-in  lgCustom:bg-slate-200">
       <Header tabActive={tabActive} setTabActive={setTabActive} />
       <main className="flex-1 flex lgCustom:p-4 lgCustom:gap-4">
         <Personal className={tabActive === 'personal' ? 'block' : 'hidden'} />
